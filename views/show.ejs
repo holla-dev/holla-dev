@@ -1,0 +1,32 @@
+<%- include("partials/header")%>
+
+<div class="ui main text container segment">
+    <div class="ui huge header"> <%= blog.title%></div>
+    <div class="ui container segment">
+        <div class="ui image container segment">
+            <img src="<%= blog.image %>">
+        </div>
+        <h2 class="ui text"><%=blog.body%></h2>
+        <p class="ui text"><%=blog.created%></p>
+        <i class="ui header text">Created by <%= blog.author.username%></i>
+         <br>
+         <a href="/blogs/<%= blog._id%>/comments/new" class="ui green button" style="float: left;">Add a comment</a>
+         <br> 
+        <hr>
+        <h3 class="ui text "> Comments</h3> 
+        <% blog.comments.forEach(function(comment){%>
+            <p>  <%= comment.author.username %> --  <%= comment.text %></p>
+       <% })%>
+            <hr>
+        <%if((currentUser.username == blog.author.username && currentUser.id == blog.author.id) || (currentUser.username == "Superuser")){%>
+        <a href="/blogs/<%= blog._id %>/edit" class="ui blue button readmore" id="editBtn"> Edit Post</a>
+        <form action="/blogs/<%= blog._id%>?_method=DELETE" method="POST"> 
+        <button class="ui red button readmore" id="delBtn"> Delete </button>
+        </form>
+        <%}%>
+       
+    </div>
+</div> 
+
+
+<%- include("partials/footer")%>

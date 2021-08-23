@@ -1,0 +1,42 @@
+#ic {
+    font-size: 25px;
+}
+.ui.secondary.inverted.menu {
+    max-height: 10px;
+}
+
+#con-form {
+    margin-left: 27%;
+    border: none;
+    max-width: 600px;
+    height: 100%;
+}
+#but {
+    margin-top: 10px;
+}
+.ui.huge.header {
+    text-align: center;
+}
+#readmore {
+    margin: 15px 20%;
+}
+ui.inverted.fixed.secondary.menu{
+    margin-bottom: 40px;
+}
+#fixed {
+    position: fixed;
+    /* overflow: hidden; */
+    width: 100%;
+    margin-bottom: 20px;
+    top: 0;
+}
+.ui.container.segment {
+    position: static;
+    margin: 6rem 0;
+}
+#delBtn {
+    margin-top: 15px;
+}
+.ui.button:hover {
+    background-color: green;
+}

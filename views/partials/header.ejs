@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta name="theme-color" content="#9d4edd">
+  <meta>
+<head>
+    <title>Blog App</title>
+    <link rel="stylesheet" href="/stylesheet/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css" integrity="sha512-+vQ+jSa1HG6gePn+YmXcXoemUtDTMeEJOM5rs4eS1rClpOnKm2WAZRS/rjWZkSnna1mAMZ8upmOxrJgoUKX9lQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+    
+<body>
+  <div id="fixed">
+    <div class="ui inverted segment">
+       <div class="container"> 
+           <div class="ui inverted secondary menu">
+          <div class="header item"><i class="code icon" id="ic"></i><strong>Holla Blog</strong></div>
+          <a class="item" href="/"> Home </a>
+          <a class="item" href="/blogs/new">New Post</a>
+          <a href="/blogs" class="item"> Blogs </a>
+          <div class="right menu">
+          <div class="item">
+            <div class="ui icon input">
+              <input type="text" placeholder="Search...">
+              <i class="search link icon"></i>
+            </div>
+          </div>
+          <% if(!currentUser){%>
+             <a class="ui item" href="/register"> Sign Up </a>
+            <a href="/login" class="ui item" > Log in</a>
+         <% } else{%>
+               <a href="#" class="ui item"> Signed in as <%= currentUser.username%></a>
+               <a href="/logout" class="ui item" id="logout">Log out</a>
+         <%} %>
+        </div>
+        </div>
+       </div>
+      </div>
+  </div>

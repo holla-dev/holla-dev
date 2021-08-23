@@ -1,0 +1,17 @@
+<%- include("partials/header") %>
+
+<div class="ui container segment">
+    <h1 class="ui huge header">Welcome to holla's blog page</h1>
+</div>
+<div class="ui container">
+<%blogs.forEach(function(blog){%>
+ <div>
+     <h3><%=blog.title%></h3>
+     <img src="<%=blog.image%>">
+     <h2> <%= blog.body%></h2>
+     <span><%=blog.created%></span> <br>
+     <a href="/blogs/<%= blog._id %>" class="ui blue button" id="readmore"> Read more</a>
+ </div>
+<%})%>
+</div>
+<%- include("partials/footer") %>
